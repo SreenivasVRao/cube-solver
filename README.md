@@ -5,9 +5,14 @@ Implements a Rubik's cube colour detection system on top of existing Kociemba al
 #Installation instructions
 
 `sudo pip install kociemba`
+
 `git clone https://github.com/SreenivasVRao/cube-solver.git`
+
 `cd cube-solver`
+
 `git clone https://github.com/SreenivasVRao/MagicCube.git`
+
+To test the system, run:
 `python test.py`
 
 
