@@ -142,7 +142,9 @@ while True:
     #img= cv2.flip(img, 1)
 
     edges, output, retval, region = process_img(img)
-    info = str(picnumber)+' faces calibrated'
+    info = str(picnumber)+' faces calibrated.'
+    if picnumber==6:
+        info = info+' Press Q to Quit.'
     cv2.putText(output, info, (10, 450), font, 0.7, (255, 255, 255), 2)
     cv2.imshow('Identified Rectangles', output)
     cv2.imshow('Canny', edges)
