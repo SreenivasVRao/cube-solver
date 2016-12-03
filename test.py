@@ -185,10 +185,14 @@ for i in range(0,6):
     img = cv2.imread(imname)
     #img = cv2.flip(img, 1)
     edges, output = process_img(img)
+    img= cv2.flip(img, 1)
+    a,b,c= img.shape
     cv2.imshow('Output', output)
     cv2.imshow('Edges', edges)
     cv2.moveWindow('Edges', 700, 0)
     cv2.waitKey(waitLength)
+    fname = 'detection'+str(i).zfill(3)+'.png'
+    cv2.imwrite(fname, output)
 
 cv2.destroyAllWindows()
 final_results = [[],[],[],[],[],[]]

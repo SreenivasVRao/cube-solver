@@ -1,3 +1,3 @@
-S"U' L' F U D L B' L'"
+S"U2 L' B' L2 F B U' B2 L D' F L2 B2 U' L2 D L2 F2 U2 R2 D"
 p0
 .

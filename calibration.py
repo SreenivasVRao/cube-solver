@@ -5,7 +5,14 @@ import os
 import shutil
 
 waitLength=0
-cap = cv2.VideoCapture(1)
+try:
+	cap = cv2.VideoCapture(0)
+
+except:
+	
+	print "\n\nChange the VideoCapture argument in calibration.py"
+	exit(0)
+
 ground_truth = []
 faces_list= []
 boxes_list=[]
@@ -74,12 +81,12 @@ def process_img(input_frame):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     val = hsv[::, ::, 2]
-    _, thresh = cv2.threshold(val, 50, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    _, thresh = cv2.threshold(val, 20, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     kernel = np.ones((3, 3))
 
     erode = cv2.erode(thresh, kernel, iterations=2)
-    edges = cv2.Canny(erode, 220, 230)
+    edges = cv2.Canny(erode, 200, 230)
 
     _, contours, _ = cv2.findContours(edges.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     rect_list = process_contours(contours)
@@ -88,7 +95,7 @@ def process_img(input_frame):
 
     ret, img, segment = process_rectangles(rectangles, img)
 
-    return edges, img, ret, segment
+    return  edges, img, ret, segment
 
 
 def process_rectangles(rectlist, input_img):
@@ -142,7 +149,7 @@ while True:
     #img= cv2.flip(img, 1)
 
     edges, output, retval, region = process_img(img)
-    info = str(picnumber)+' faces calibrated.'
+    info = str(picnumber)+' cube faces calibrated.'
     if picnumber==6:
         info = info+' Press Q to Quit.'
     cv2.putText(output, info, (10, 450), font, 0.7, (255, 255, 255), 2)

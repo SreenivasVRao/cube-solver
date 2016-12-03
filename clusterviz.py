@@ -7,6 +7,7 @@ import calibration
 training_data = calibration.ground_truth
 test_data = calibration.faces_list
 
+np.save('raw_image_data.npy', training_data)
 pixel_values = None
 
 colours = ['White', 'Yellow', 'Green', 'Blue', 'Red', 'Orange']
@@ -21,7 +22,7 @@ for each in training_data:
         pixel_values=np.concatenate((pixel_values, temp), axis = 1)
     else: pixel_values= temp
 pixel_values= pixel_values.swapaxes(0,1)
-
+np.save('lab_data_points.npy', pixel_values)
 #K Means modelling
 model = KMeans(n_clusters=6)
 model.fit(pixel_values)
