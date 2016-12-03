@@ -24,6 +24,23 @@ Front,Back, Right, Left, Up, Down. (This corresponds to White, Yellow, Green, Bl
 3. Note that the orientation of the faces with respect to each other must be maintained. To do so, rotate the cube on only one axis at a time.
 4. Implementation is specific to the 3x3x3 Hungarian Horror!
 
+
+#Examples
+
+A sample set of inputs and outputs is available in `photos/inputs` and `photos/outputs`.
+
+A video showing the visualization and solution of the cube is available here: https://youtu.be/Jx_qR5r4UQ8
+
+The visualization is a modification of https://github.com/davidwhogg/MagicCube
+
+I have added an option to reverse engineer the scramble so that you can run the simulation multiple times with the "rescramble" button. 
+
+"Solve Cube" calls the solver built by David Hogg. It's unclear what method it is using, but it is probably similar to the Kociemba algorithm.
+
+"Alternate Solution" is an added functionality that explicitly uses the Kociemba algorithm to solve it. It also runs slower than the "Solve cube" button, so you can follow the solution on your own cube.
+
+In the terminal, you can see the scramble and the solution in Singmaster notation.
+
 #Acknowledgements
 Thank you to @davidwhogg and @jakevdp for the MagicCube repo. Thanks as well to @muodov for the Kociemba algorithm implementation.
 

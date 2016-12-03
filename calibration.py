@@ -6,7 +6,7 @@ import shutil
 
 waitLength=0
 try:
-	cap = cv2.VideoCapture(0)
+	cap = cv2.VideoCapture(1)
 
 except:
 	

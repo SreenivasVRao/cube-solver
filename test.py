@@ -204,6 +204,7 @@ for each in faces:
 
 current_state = get_stickers(final_results) #converts human readable format to Kociemba solver format
 solved_state = 'UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB'
+print current_state
 original_scramble = kociemba.solve(solved_state, current_state)
 original_scramble= unicodedata.normalize('NFKD', original_scramble).encode('ascii','ignore')
 solution = kociemba.solve(current_state)
