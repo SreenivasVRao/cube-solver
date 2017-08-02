@@ -2,21 +2,20 @@
 Implements a Rubik's cube colour detection system on top of existing Kociemba algorithm implementation and 3D model visualization
 
 
-#Installation instructions
+# Installation instructions
 
-`sudo pip install kociemba`
+    sudo pip install kociemba
+    git clone https://github.com/SreenivasVRao/cube-solver.git
+    cd cube-solver
+    git clone https://github.com/SreenivasVRao/MagicCube.git
 
-`git clone https://github.com/SreenivasVRao/cube-solver.git`
-
-`cd cube-solver`
-
-`git clone https://github.com/SreenivasVRao/MagicCube.git`
 
 To test the system, run:
-`python test.py`
+
+    python test.py
 
 
-#Usage Notes
+# Usage Notes
 
 1. System requires uniform lighting, preferably overhead.
 2. Show the Rubik's cube to the camera in the following order of faces: 
@@ -25,7 +24,7 @@ Front,Back, Right, Left, Up, Down. (This corresponds to White, Yellow, Green, Bl
 4. Implementation is specific to the 3x3x3 Hungarian Horror!
 
 
-#Examples
+# Examples
 
 A sample set of inputs and outputs is available in `photos/inputs` and `photos/outputs`.
 
@@ -41,10 +40,10 @@ I have added an option to reverse engineer the scramble so that you can run the 
 
 In the terminal, you can see the scramble and the solution in Singmaster notation.
 
-#Acknowledgements
+# Acknowledgements
 Thank you to @davidwhogg and @jakevdp for the MagicCube repo. Thanks as well to @muodov for the Kociemba algorithm implementation.
 
-#LICENSE
+# LICENSE
 All content copyright 2016 respective authors. Cube Solver is licensed under the GPLv3 License. See `LICENSE.txt` for more information.
 
 
